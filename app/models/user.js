@@ -9,7 +9,7 @@ let userSchema = new mongoose.Schema({
   updated_at: { type: Date, default: Date.now }
 });
 
-userSchema.pre('save', (next) => {
+userSchema.pre('save', function (next) {
   if(this.isNew || this.isModified('password')) {
     bcrypt.hash(this.password, 10, (err, hashedPassword) => {
       if (err)
