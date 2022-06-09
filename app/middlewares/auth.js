@@ -27,3 +27,5 @@ const WithAuth = (req, res, next) => {
     })
   }
 }
+
+module.exports = WithAuth;
